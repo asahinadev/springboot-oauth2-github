@@ -1,4 +1,5 @@
-server:  port: 9002
+server:
+  port: 9002
 
 spring:
   security:
@@ -14,8 +15,3 @@ spring:
             scope:
               - user:email
               - read:user
-        provider: 
-          google:
-            authorizationUri: "https://github.com/login/oauth/authorize"
-            tokenUri:         "https://github.com/login/oauth/access_token"
-            userInfoUri:      "https://api.github.com/user"
