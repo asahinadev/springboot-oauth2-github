@@ -1,0 +1,21 @@
+server:  port: 9002
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            provider:      "github"
+            client-name:   "Github"
+            client-id:     "[env]"
+            client-secret: "[env]"
+            redirect-uri:  "{baseUrl}/login/oauth2/code/{registrationId}"
+            scope:
+              - user:email
+              - read:user
+        provider: 
+          google:
+            authorizationUri: "https://github.com/login/oauth/authorize"
+            tokenUri:         "https://github.com/login/oauth/access_token"
+            userInfoUri:      "https://api.github.com/user"
